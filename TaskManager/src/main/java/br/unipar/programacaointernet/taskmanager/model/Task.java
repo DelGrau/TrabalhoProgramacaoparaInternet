@@ -27,7 +27,7 @@ public class Task {
     @Column(length = 2)
     private Integer prioridade;
 
-    @Column(length = 5)
+    @Column
     private boolean status;
 
     @Column
