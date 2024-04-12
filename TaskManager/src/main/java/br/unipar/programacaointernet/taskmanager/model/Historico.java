@@ -26,8 +26,8 @@ public class Historico {
     @Column(length = 2)
     private String prioridade;
 
-    @Column(length = 5)
-    private String status;
+    @Column
+    private boolean status;
 
     @ManyToOne
     private Usuario usuario;
