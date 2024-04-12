@@ -58,7 +58,16 @@ public class TaskController {
     @Path("/update")
     @Consumes(value = MediaType.APPLICATION_JSON)
     @Produces(value = MediaType.APPLICATION_JSON)
-    public void alterarTask(Task task) {
-        //return Response.accepted().build();
+    public Response alterarTask(Task task) {
+        try {
+            taskService.update(task);
+            return Response.status(201)
+                    .entity("Task alterada com Sucesso!")
+                    .build();
+        } catch (Exception ex) {
+            return Response.status(403)
+                    .entity(ex.getMessage())
+                    .build();
+        }
     }
 }
