@@ -38,4 +38,9 @@ public class TaskRepository {
             throw new Exception("Task não pode ser atualizada!");
         }
     }
+
+    public Task getTaskByID(Integer id){
+        String jpql = "select t from Task t where t.id = " +id;
+        return em.createQuery(jpql, Task.class).getSingleResult();
+    }
 }
