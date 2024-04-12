@@ -3,7 +3,6 @@ package br.unipar.programacaointernet.taskmanager.repository;
 import br.unipar.programacaointernet.taskmanager.model.Usuario;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.PersistenceContext;
-import org.w3c.dom.ls.LSInput;
 
 import java.util.List;
 
