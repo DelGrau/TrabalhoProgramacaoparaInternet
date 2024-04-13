@@ -59,8 +59,17 @@ public class UsuarioController {
     @Path("/update")
     @Consumes(value = MediaType.APPLICATION_JSON)
     @Produces(value = MediaType.APPLICATION_JSON)
-    public void atualizarUsuario(Usuario usuario) {
-
+    public Response atualizarUsuario(Usuario usuario) {
+        try {
+            usuarioService.update(usuario);
+            return Response.status(201)
+                    .entity("Task alterada com Sucesso!")
+                    .build();
+        } catch (Exception ex) {
+            return Response.status(403)
+                    .entity(ex.getMessage())
+                    .build();
+        }
     }
 
 }

@@ -21,4 +21,19 @@ public class UsuarioService {
     public void deletar(Usuario usuario) throws Exception {
         usuarioRepository.deletar(usuario);
     }
+
+    public void update(Usuario usuario) throws Exception {
+
+        Usuario oldUsuario = usuarioRepository.getUserById(usuario.getId());
+
+        if (usuario.getNome() == null) {
+            usuario.setNome(oldUsuario.getNome());
+        }
+
+        if (usuario.getCargo() == null) {
+            usuario.setCargo(oldUsuario.getCargo());
+        }
+
+        usuarioRepository.update(usuario);
+    }
 }
