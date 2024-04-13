@@ -7,7 +7,7 @@ import jakarta.persistence.PersistenceContext;
 import java.util.List;
 
 public class TaskRepository {
-    @PersistenceContext(unitName = "HibernateMaven")
+    @PersistenceContext(unitName = "HibernateJava")
     private EntityManager em;
 
     public List<Task> listar(){

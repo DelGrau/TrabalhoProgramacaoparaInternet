@@ -9,7 +9,7 @@ import java.util.List;
 // Repository e DAO são a mesma coisa
 // eles se comunicam com o banco de dados
 public class HistoricoRepository {
-    @PersistenceContext(unitName = "HibernateMaven")
+    @PersistenceContext(unitName = "HibernateJava")
     private EntityManager em;
 
     public List<Historico> listar(){
