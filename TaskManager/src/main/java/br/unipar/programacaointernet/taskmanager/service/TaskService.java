@@ -38,9 +38,26 @@ public class TaskService {
 
         Task oldTask = taskRepository.getTaskByID(task.getId());
 
-        //if (task.)
-        // Comparar os atributos do oldTask com os do Task
-        // Se o task for null, colocamos o oldTask no lugar
+        if (task.getDescricao() == null) {
+            task.setDescricao(oldTask.getDescricao());
+        }
+
+        if (task.getObservacao() == null) {
+            task.setObservacao(oldTask.getObservacao());
+        }
+
+        if (task.getPrioridade() == null) {
+            task.setPrioridade(oldTask.getPrioridade());
+        }
+
+        if (task.getUsuario() == null) {
+            task.setUsuario(oldTask.getUsuario());
+        }
+
+        if (task.isStatus() != oldTask.isStatus()) {
+            task.setStatus(oldTask.isStatus());
+        }
+
         taskRepository.editar(task);
         gravarHistorico(task);
     }

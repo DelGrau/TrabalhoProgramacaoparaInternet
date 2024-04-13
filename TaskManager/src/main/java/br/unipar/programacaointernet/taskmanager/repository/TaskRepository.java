@@ -33,7 +33,7 @@ public class TaskRepository {
 
     public void editar(Task task) throws Exception {
         try {
-
+            String jpql = "UPDATE Task t SET t.descricao = \'" +task.getDescricao()+ "\', t.prioridade = \'" +task.getPrioridade()+ "\', t.observacao = \'" +task.getObservacao()+ "\', t.usuario = \'" + task.getUsuario() + "\', t.status = \'" + task.isStatus() + "\' WHERE u.id = " +task.getId();
         } catch (Exception ex){
             throw new Exception("Task não pode ser atualizada!");
         }
