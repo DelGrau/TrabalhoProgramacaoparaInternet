@@ -39,9 +39,7 @@ public class UsuarioRepository {
 
     public void update(Usuario usuario) throws Exception {
         try {
-            String jpql = "UPDATE Usuario u SET u.nome = \'" +usuario.getNome()+ "\', u.cargo = \'" +usuario.getCargo()+ "\' WHERE u.id = " +usuario.getId();
-
-            em.createQuery(jpql, Usuario.class).getResultList();
+            em.merge(usuario);
 
         } catch (Exception ex) {
             throw new Exception("Não foi possível atualizar esse usuário!");
